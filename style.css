@@ -28,6 +28,7 @@ i {
 
 html {
     color: var(--dark_color);
+    font-size: 16px;
 }
 
 body {
@@ -121,11 +122,10 @@ nav .nav_list,
 
 nav .category_header {
     background-color: var(--category_color);
-    border-radius: 0 0 0 10px;
+    /* border-radius: 0 0 0 10px; */
 }
 
 nav .nav_list {
-    border-radius: 0 0 10px 0;
     position: relative;
     display: flex;
     background-color: var(--main_color);
@@ -134,7 +134,7 @@ nav .nav_list {
 nav .nav_list::before {
     content: "";
     width: 24px;
-    height: 48px;
+    height: 100%;
     position: absolute;
     top: 0;
     left: -24px;
@@ -187,8 +187,89 @@ nav .nav_list .nav_item .nav_link:hover {
     margin-top: 10px;
     text-align: center;
 }
-.coppy_right{
+
+.btn_go_to_top {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+    border: none;
+    background: none;
+}
+
+/* Post */
+.post_list .post_item {
+    margin-left: 10px;
+}
+
+.post_list .post_item .post_image {
+    border-radius: 5px;
+    position: relative;
+}
+
+.post_list .post_item .post_image::after {
+    content: "";
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    right: -25px;
+    top: -25px;
+    background-color: var(--main_color);
+    z-index: -1;
+}
+
+.post_info {
+    margin-left: 10px;
+}
+
+/* Footer */
+.coppy_right {
     background-color: var(--main_color);
     color: #fff;
 }
+
 /* Responsive */
+
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+    html {
+        font-size: calc(13px + 3 * ((100vw - 320px) / 680));
+    }
+    .nav_list{
+        border-radius: 0 0 10px 10px;
+    }
+    .nav_list::before{
+        display: none;
+    }
+    .post_btn{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .post_list .post_item .post_image::after{
+        display: none;
+    }
+
+}
+
+/* PC Medium */
+@media (min-width: 1024px) {
+    .category_header {
+        border-radius: 0 0 0 10px;
+    }
+    .nav_list{
+        border-radius: 0 0 10px 0;
+    }
+    .post_btn{
+        display: flex;
+        justify-content: end;
+    }
+}
