@@ -36,7 +36,6 @@ body {
     background: url('https://img.freepik.com/free-vector/abstract-shiny-lines-white-gray-background_1017-25097.jpg?w=1060&t=st=1681476508~exp=1681477108~hmac=85cf768e822d53377d97e1cc80fbbdc212ea534594ba2e7ef2a47b7831242629') no-repeat center center fixed;
     background-size: cover;
 }
-
 /* Top */
 .top {
     padding: 10px 0px;
@@ -161,33 +160,6 @@ nav .nav_list .nav_item .nav_link:hover {
     color: var(--main_color);
 }
 
-/* Category Slider */
-.product_slider {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.product_slider .product_slider_content {
-    width: 200px;
-    margin-left: 10px;
-}
-
-.product_slider .product_slider_content .product_slider_image {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.product_slider .product_slider_content .product_slider_image img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.product_slider .product_slider_content .product_slider_title {
-    margin-top: 10px;
-    text-align: center;
-}
-
 .btn_go_to_top {
     position: fixed;
     bottom: 10px;
@@ -195,6 +167,20 @@ nav .nav_list .nav_item .nav_link:hover {
     z-index: 10;
     border: none;
     background: none;
+}
+
+/* Banner */
+.banner .banner_image{
+    position: relative;
+}
+.banner .banner_image::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
 }
 
 /* Post */
@@ -235,26 +221,27 @@ nav .nav_list .nav_item .nav_link:hover {
     html {
         font-size: calc(13px + 3 * ((100vw - 320px) / 680));
     }
-    .nav_list{
+
+    .nav_list {
         border-radius: 0 0 10px 10px;
     }
-    .nav_list::before{
+
+    .nav_list::before {
         display: none;
     }
-    .post_btn{
+
+    .post_btn {
         display: flex;
         justify-content: center;
     }
 }
 
 /* Tablet */
-@media (min-width: 740px) and (max-width: 1023px) {
-
-}
+@media (min-width: 740px) and (max-width: 1023px) {}
 
 /* Mobile */
 @media (max-width: 768px) {
-    .post_list .post_item .post_image::after{
+    .post_list .post_item .post_image::after {
         display: none;
     }
 
@@ -265,10 +252,10 @@ nav .nav_list .nav_item .nav_link:hover {
     .category_header {
         border-radius: 0 0 0 10px;
     }
-    .nav_list{
+    .nav_list {
         border-radius: 0 0 10px 0;
     }
-    .post_btn{
+    .post_btn {
         display: flex;
         justify-content: end;
     }
